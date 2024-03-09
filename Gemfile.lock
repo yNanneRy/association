@@ -121,6 +121,8 @@ GEM
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -147,7 +149,6 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.5)
     minitest (5.22.2)
     msgpack (1.7.2)
     mutex_m (0.2.0)
@@ -161,9 +162,6 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.2)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.16.2-aarch64-linux)
       racc (~> 1.4)
     nokogiri (1.16.2-x86_64-linux)
@@ -259,8 +257,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.2)
-      mini_portile2 (~> 2.8.0)
     sqlite3 (1.7.2-aarch64-linux)
     sqlite3 (1.7.2-x86_64-linux)
     stimulus-rails (1.3.3)
@@ -292,7 +288,6 @@ GEM
 
 PLATFORMS
   aarch64-linux
-  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -305,6 +300,7 @@ DEPENDENCIES
   devise-bootstrap5
   devise-i18n
   factory_bot_rails
+  faker
   importmap-rails
   jbuilder
   puma (>= 5.0)
