@@ -1,6 +1,10 @@
 source "https://rubygems.org"
 
+gem 'rails_performance'
+
 gem 'faker'
+
+gem 'will_paginate', '~> 4.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
