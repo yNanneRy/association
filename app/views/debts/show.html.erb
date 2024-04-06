@@ -1,0 +1,14 @@
+<%# TODO: refactor DRY %>
+<% if notice.present? %>
+  <div class="alert alert-success">
+    <%= notice %>
+  </div>
+<% end %>
+
+<%= link_to "< Voltar", debts_path, class: 'btn btn-secondary btn-sm' %>
+
+<%= render @debt %>
+
+<%= link_to 'Editar', edit_debt_path(@debt), class: "btn btn-primary mb-2" %>
+
+<%= button_to "Remover", @debt, method: :delete, class: 'btn btn-danger' %>

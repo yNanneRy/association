@@ -5,38 +5,38 @@
   </div>
 <% end %>
 
-<h1>Débitos</h1>
+<h1>Pagamentos</h1>
 
-<%= link_to new_debt_path, class: 'btn btn-light btn-sm' do %>
+<%= link_to new_payment_path, class: 'btn btn-light btn-sm' do %>
   <i class="bi bi-plus"></i>
-  Novo débito
+  Novo pagamento
 <% end %>
 
-<div id="debts">
+<div id="payments">
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
         <th>ID</th>
         <th>Associado</th>
-        <th>Observação</th>
-        <th class="text-end">Valor</th>
+        <th>Valor</th>
+        <th>Pago em</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <% @debts.each do |debt| %>
+      <% @payments.each do |payment| %>
         <tr>
-          <td><%= debt.id %></td>
-          <td><%= debt.person.name %></td>
-          <td><%= debt.observation %></td>
-          <td class="text-end"><%= debt.amount %></td>
+          <td><%= payment.id %></td>
+          <td><%= payment.person.name %></td>
+          <td><%= payment.amount %></td>
+          <td><%= payment.paid_at %></td>
           <td class="text-center align-middle">
           <div class="btn-group" role="group" aria-label="Actions">
-            <%= link_to debt, class: "btn btn-sm btn-primary" do %>
+            <%= link_to payment, class: "btn btn-sm btn-primary" do %>
               <i class="bi bi-folder2-open"></i>
             <% end %>
-            <%= link_to edit_debt_path(debt), class: "btn btn-sm btn-secondary" do %>
+            <%= link_to edit_payment_path(payment), class: "btn btn-sm btn-secondary" do %>
               <i class="bi bi-pencil"></i>
             <% end %>
           </div>

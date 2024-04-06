@@ -24,11 +24,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Nome</th>
       <th>CPF/CNPJ</th>
       <th>Telefone</th>
       <th>Cadastrado em</th>
       <th>Cadastrado por</th>
+      <th>Saldo</th>
       <th>Ativo</th>
       <th></th>
     </tr>
@@ -36,11 +38,13 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
+        <td><%= person.id %></td>
         <td><%= person.name %></td>
         <td><%= person.national_id %></td>
         <td><%= person.phone_number %></td>
         <td><%=l person.created_at, format: :short %></td>
         <td><%= person.user.email %></td>
+        <td><%= person.balance %></td>
         <td class="text-center align-middle">
           <%# TODO: refactor: use a helper method %>
           <% if person.active %>

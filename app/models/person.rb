@@ -2,6 +2,7 @@ class Person < ApplicationRecord
   belongs_to :user, optional: true
 
   has_many :debts, dependent: :destroy
+  has_many :payments, dependent: :destroy
 
   validates :name, :national_id, presence: true
   validates :national_id, uniqueness: true
@@ -14,4 +15,9 @@ class Person < ApplicationRecord
       errors.add :national_id, :invalid
     end
   end
+
+  public def balance
+    sprintf('%.2f', payments.sum(:amount) - debts.sum(:amount))
+  end
+  
 end
