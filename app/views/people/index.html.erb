@@ -44,7 +44,7 @@
         <td><%= person.phone_number %></td>
         <td><%=l person.created_at, format: :short %></td>
         <td><%= person.user.email %></td>
-        <td><%= person.balance %></td>
+        <td><%= sprintf('%.2f', person.balance) %></td>
         <td class="text-center align-middle">
           <%# TODO: refactor: use a helper method %>
           <% if person.active %>

@@ -5,7 +5,7 @@ Debt.destroy_all
 
 User.create email: 'admin@admin.com', password: '111111'
 
-1000.times do |counter|
+5.times do |counter|
   puts "Creating user #{counter}"
     User.create!(
       email: Faker::Internet.email,
@@ -13,7 +13,7 @@ User.create email: 'admin@admin.com', password: '111111'
     )
   end
   
-3000.times do |counter|
+500.times do |counter|
   puts "Inserting Person #{counter}"
     person = Person.create!(
         name: Faker::Name.name,
@@ -24,7 +24,7 @@ User.create email: 'admin@admin.com', password: '111111'
     )
 end
 
-15000.times do |counter|
+1000.times do |counter|
   puts "Inserting Debt #{counter}"
     Debt.create!(
     person: Person.order('random()').first,
@@ -33,7 +33,7 @@ end
     )
 end
 
-10000.times do |counter|
+1000.times do |counter|
   puts "Inserting Payment #{counter}"
     Payment.create!(
       person: Person.order('random()').first,

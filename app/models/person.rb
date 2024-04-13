@@ -16,8 +16,14 @@ class Person < ApplicationRecord
     end
   end
 
-  public def balance
-    sprintf('%.2f', payments.sum(:amount) - debts.sum(:amount))
+  public def update_balance_payments(valor)
+    self.balance = self.balance + valor
+    self.save
+  end
+
+  public def update_balance_debts(valor)
+    self.balance = self.balance - valor
+    self.save
   end
   
 end

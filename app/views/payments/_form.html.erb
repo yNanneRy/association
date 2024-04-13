@@ -33,7 +33,7 @@
 
       <div class="mb-3">
         <%= form.label :amount, 'Valor', class: 'form-label' %>
-        <%= form.number_field :amount, class: 'form-control' %>
+        <%= form.number_field :amount, step: '0.01', class: 'form-control' %>
       </div>
 
       <div class="mb-3">
