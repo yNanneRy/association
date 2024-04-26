@@ -2,6 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
+import "chartkick"
+import "Chart.bundle"
 
 import { Application } from '@hotwired/stimulus'
 import { Autocomplete } from 'stimulus-autocomplete'
