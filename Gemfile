@@ -2,6 +2,10 @@ source "https://rubygems.org"
 
 gem "chartkick"
 
+group :development do
+  gem 'letter_opener_web', '~> 2.0'
+end
+
 gem 'rails_performance'
 
 gem 'faker'
