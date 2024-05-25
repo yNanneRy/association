@@ -1,4 +1,10 @@
+require 'sidekiq'
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+
+  mount Sidekiq::Web => '/sidekiq'
+
   get 'dashboard/index'
   get 'reports/balance'
   resources :payments

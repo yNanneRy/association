@@ -270,6 +270,11 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (6.1.0)
       activesupport (>= 5.2.0)
+    sidekiq (7.2.4)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.19.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -333,6 +338,7 @@ DEPENDENCIES
   rspec-rails
   selenium-webdriver
   shoulda-matchers
+  sidekiq (~> 7.2)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
