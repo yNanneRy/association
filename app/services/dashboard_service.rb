@@ -58,4 +58,7 @@ class DashboardService
         end
     end
 
+    def self.find_people_over_hundred
+        Debt.includes(:person).where("amount > 100000").limit(10)
+    end
 end

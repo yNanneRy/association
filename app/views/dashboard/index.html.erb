@@ -64,6 +64,21 @@
   </div>
 </div>
 
+<div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Últimos 10 débitos lançados com valor > 100 mil</h5>
+        <ul>
+          <% @people_over_hundred.each do |person| %>
+            <li><%= person.person.name %>: <%= person.amount %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="row mt-2">
   <div class="col-6">
     <div class="card">

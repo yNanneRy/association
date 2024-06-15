@@ -18,10 +18,10 @@ class DashboardController < ApplicationController
 
     people = DashboardService.find_people
 
-    # associado com maior saldo
     @top_person = people.last
 
-    # associado com menor saldo
     @bottom_person = people.first
+
+    @people_over_hundred = DashboardService.find_people_over_hundred
   end
 end
