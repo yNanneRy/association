@@ -9,6 +9,34 @@
 
 <%= render @person %>
 
+<h2>Histórico de Alterações</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Ação</th>
+      <th>Usuário</th>
+      <th>Alterações</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @person.audits.includes(:user).each do |audit| %>
+      <tr>
+        <td><%= audit.action %></td>
+        <td><%= audit.user.try(:email) || "Desconhecido" %></td>
+        <td>
+          <ul>
+            <% audit.audited_changes.each do |field, values| %>
+              <li><strong><%= field %>:</strong> de "<%= values[0] %>" para "<%= values[1] %>"</li>
+            <% end %>
+          </ul>
+        </td>
+        <td><%= audit.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Editar', edit_person_path(@person), class: "btn btn-primary mb-2" %>
 
 <%= button_to "Remover", @person, method: :delete, class: 'btn btn-danger' %>
